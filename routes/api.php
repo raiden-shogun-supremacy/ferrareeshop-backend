@@ -7,6 +7,8 @@ use App\Http\Controllers\OrderStatusController;
 use App\Http\Controllers\ProductStockController;
 use App\Http\Controllers\DiscountCouponController;
 use App\Http\Controllers\PreOrderController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,3 +64,15 @@ Route::get('preorder',[PreOrderController::class,'ListPreOrder']);
 Route::get('preorder/{id}',[PreOrderController::class,'ListPreOrderByID']);
 
 Route::post('newpreorder',[PreOrderController::class,'CreatePreOrder']);
+
+Route::get('customer',[CustomerController::class,'ListCustomer']);
+
+Route::get('customer/{id}',[CustomerController::class,'ListCustomerByID']);
+
+Route::post('newcustomer',[CustomerController::class,'registerCustomer']);
+
+Route::get('payment',[PaymentController::class,'ListPayment']);
+
+Route::get('payment/{id}',[PaymentController::class,'ListPaymentByID']);
+
+Route::post('newpayment',[PaymentController::class,'CreatePayment']);

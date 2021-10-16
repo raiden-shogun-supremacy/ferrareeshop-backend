@@ -22,6 +22,8 @@ class Payment extends Model
         'ReceiptDate' 
     ];
 
+    public $timestamps = false;
+
     public function customer()
     {
         return $this->belongsTo(Customer::class);

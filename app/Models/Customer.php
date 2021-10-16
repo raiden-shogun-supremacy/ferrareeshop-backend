@@ -21,6 +21,8 @@ class Customer extends Model
         'serviceEmp' 
     ];
 
+    public $timestamps = false;
+
     public function employee(){
         return $this->belongsTo(Employee::class);
     }

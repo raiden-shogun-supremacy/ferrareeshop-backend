@@ -17,6 +17,8 @@ class Preorder_Payment extends Model
         'PrePrice' 
     ];
 
+    public $timestamps = false;
+
     public function customer()
     {
         return $this->belongsTo(Customer::class);
