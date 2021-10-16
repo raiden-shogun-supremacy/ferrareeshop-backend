@@ -6,6 +6,7 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\OrderStatusController;
 use App\Http\Controllers\ProductStockController;
 use App\Http\Controllers\DiscountCouponController;
+use App\Http\Controllers\PreOrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,3 +56,9 @@ Route::get('coupon/{id}',[DiscountCouponController::class,'ListCouponByID']);
 Route::post('newcoupon',[DiscountCouponController::class,'CreateCoupon']);
 
 Route::delete('deletecoupon/{id}',[DiscountCouponController::class,'DeleteCoupon']);
+
+Route::get('preorder',[PreOrderController::class,'ListPreOrder']);
+
+Route::get('preorder/{id}',[PreOrderController::class,'ListPreOrderByID']);
+
+Route::post('newpreorder',[PreOrderController::class,'CreatePreOrder']);
