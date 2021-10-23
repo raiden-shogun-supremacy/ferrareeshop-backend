@@ -28,7 +28,7 @@ class EmployeeController extends Controller
         {
             return ["error"=>"Username or password is not matched"];
         }
-        return $employee;
+        return ["Login Successful"];
     }
 
     function ListEmployee(){ //GET
