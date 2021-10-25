@@ -12,6 +12,7 @@ class EmployeeController extends Controller
     //
     function register(Request $request){ //POST
         $employee = new employee;
+        $customer->EmployeeID = $request->input('EmployeeID');
         $employee->Fname = $request->input('Fname');
         $employee->Lname = $request->input('Lname');
         $employee->DeptNo = $request->input('DeptNo');

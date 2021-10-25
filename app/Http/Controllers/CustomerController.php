@@ -22,6 +22,7 @@ class CustomerController extends Controller
 
     function registerCustomer(Request $request){ //POST
         $customer = new Customer;
+        $customer->CustomerID = $request->input('CustomerID');
         $customer->Fname = $request->input('Fname');
         $customer->Lname = $request->input('Lname');
         $customer->Address = $request->input('Address');
