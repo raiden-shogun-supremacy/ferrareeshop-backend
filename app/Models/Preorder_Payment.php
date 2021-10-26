@@ -11,6 +11,7 @@ class Preorder_Payment extends Model
     public $table = "Preorder_Payment";
 
     protected $fillable = [
+        'PreOrderID',
         'ProductID' ,
         'CustomerID' ,
         'PreOrderAmt' ,

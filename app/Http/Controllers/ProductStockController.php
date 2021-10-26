@@ -33,7 +33,7 @@ class ProductStockController extends Controller
 
     function CreateProduct(Request $request){ //POST
         $product = new Product_Stock;
-        $product->ProductID = $request->input('ProductID');
+        // $product->ProductID = $request->input('ProductID');
         $product->ProductName = $request->input('ProductName');
         $product->Category = $request->input('Category');
         $product->LotNo = $request->input('LotNo');

@@ -21,6 +21,14 @@ class DiscountCouponController extends Controller
         return $coupon;
     }
 
+    function UpdateCoupon(Request $request){ //PUT
+        Discount_Coupon::where('DiscountID', $request->DiscountID)->update(['DiscountCode'=>$request->DiscountCode,
+        'CodeAmount'=>$request->CodeAmount,
+        'ValidUntil'=>$request->ValidUntil
+        ]);
+        return "Update Completed!!!!";
+    }
+
     function CreateCoupon(Request $request){ //POST
         $coupon = new Discount_Coupon;
         $coupon->DiscountCode = $request->input('DiscountCode');

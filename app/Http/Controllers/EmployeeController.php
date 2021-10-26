@@ -12,7 +12,7 @@ class EmployeeController extends Controller
     //
     function register(Request $request){ //POST
         $employee = new employee;
-        $customer->EmployeeID = $request->input('EmployeeID');
+        // $customer->EmployeeID = $request->input('EmployeeID');
         $employee->Fname = $request->input('Fname');
         $employee->Lname = $request->input('Lname');
         $employee->DeptNo = $request->input('DeptNo');
@@ -23,7 +23,7 @@ class EmployeeController extends Controller
         return $employee;
     }
 
-    function login(Request $request){
+    function login(Request $request){ //POST
         $employee = Employee::where('Username',$request->Username)->first();
         if(!$employee || !Hash::check($request->Password,$employee->Password))
         {
@@ -38,9 +38,26 @@ class EmployeeController extends Controller
 
     function ListEmployeeByID($id){ //GET BY ID
         $employee = DB::select(DB::raw("
-        SELECT * FROM employee WHERE employee.EmployeeID = ". $id ." "
+        SELECT * FROM employee WHERE employee.EmployeeID = ". $id ."; " 
         ));
 
         return $employee;
+    }
+
+    function UpdateEmployee(Request $request){ //PUT
+        Employee::where('EmployeeID', $request->EmployeeID)->update(['Fname'=>$request->Fname,
+        'Lname'=>$request->Lname,
+        'DeptNo'=>$request->DeptNo,
+        'Username'=>$request->Username,
+        'Password'=>Hash::make($request->input('Password')),
+        'IsHead'=>$request->IsHead,
+        ]);
+        return "Update Completed!!!!";
+    }
+
+    function DeleteEmployee($id){ //DELETE
+        $employee = Employee::where('EmployeeID', $id);
+        $employee->delete();
+        return "Delete Completed!!!";
     }
 }

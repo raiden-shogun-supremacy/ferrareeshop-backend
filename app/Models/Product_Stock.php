@@ -35,7 +35,7 @@ class Product_Stock extends Model
     }
 
     public function product_infoRelation(){
-        return $this->hasMany(Product_Info::class);
+        return $this->hasOne(Product_Info::class);
     }
 
     public function employeeRelation(){

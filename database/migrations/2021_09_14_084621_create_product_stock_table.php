@@ -18,7 +18,7 @@ class CreateProductStockTable extends Migration
             $table->text('ProductName');
             $table->text('Category');
             $table->integer('LotNo');
-            $table->integer('UnitPrice');
+            $table->float('UnitPrice');
             $table->integer('InStockAmt');
             $table->timestamp('RecordDate');
         });

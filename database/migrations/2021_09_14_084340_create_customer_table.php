@@ -21,7 +21,7 @@ class CreateCustomerTable extends Migration
             $table->text('PostalCode');
             $table->text('Phone');
             $table->integer('Point');
-            $table->integer('serviceEmp')->unsigned();
+            $table->integer('serviceEmp')->unsigned()->nullable();
             
         });
         

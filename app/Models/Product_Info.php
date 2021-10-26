@@ -18,6 +18,8 @@ class Product_Info extends Model
         'VenderNo' ,
     ];
 
+    public $timestamps = false;
+
     public function product_payment(){
         return $this->belongsTo(Product_Payment::class);
     }

@@ -14,11 +14,11 @@ class CreateProductInfoTable extends Migration
     public function up()
     {
         Schema::create('product_info', function (Blueprint $table) {
-            $table->integer('ProductID')->unsigned();
+            $table->integer('ProductID')->unsigned()->nullable()->unique();
             $table->text('ProdName');
-            $table->integer('CategoryNo')->unsigned();
-            $table->binary('ProductIMG')->nullable();
-            $table->integer('VendorNo')->unsigned();
+            $table->integer('CategoryNo')->unsigned()->nullable();
+            $table->string('ProductIMG')->nullable();
+            $table->integer('VendorNo')->unsigned()->nullable();
         });
     }
 

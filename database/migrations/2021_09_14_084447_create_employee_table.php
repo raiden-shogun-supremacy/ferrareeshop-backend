@@ -17,7 +17,7 @@ class CreateEmployeeTable extends Migration
             $table->increments('EmployeeID');
             $table->text('Fname');
             $table->text('Lname');
-            $table->integer('DeptNo')->unsigned();
+            $table->integer('DeptNo')->unsigned()->nullable();
             $table->text('Username');
             $table->text('Password');
             $table->Boolean('IsHead');

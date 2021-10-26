@@ -14,8 +14,9 @@ class CreatePreorderPaymentTable extends Migration
     public function up()
     {
         Schema::create('preorder_payment', function (Blueprint $table) {
-            $table->integer('ProductID')->unsigned();
-            $table->integer('CustomerID')->unsigned();
+            $table->increments('PreOrderID');
+            $table->integer('ProductID')->unsigned()->nullable();
+            $table->integer('CustomerID')->unsigned()->nullable();
             $table->integer('PreOrderAmt');
             $table->integer('PrePrice');
         });

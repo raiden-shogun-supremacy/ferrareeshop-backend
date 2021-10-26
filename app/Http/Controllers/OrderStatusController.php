@@ -34,4 +34,10 @@ class OrderStatusController extends Controller
         $OrderStatus->save();
         return $OrderStatus;
     }
+
+    function DeleteStatus($id){ //DELETE
+        $status = Order_Status::where('ReceiptID', $id);
+        $status->delete();
+        return "Delete Completed!!!";
+    }
 }

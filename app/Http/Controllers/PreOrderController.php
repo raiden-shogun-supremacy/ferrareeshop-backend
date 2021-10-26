@@ -21,6 +21,14 @@ class PreOrderController extends Controller
         return $preorder;
     }
 
+    function UpdatePreOrder(Request $request){ //PUT
+        Preorder_Payment::where('ProductID', $request->ProductID)->update(['CustomerID'=>$request->CustomerID,
+        'PreOrderAmt'=>$request->PreOrderAmt,
+        'PrePrice'=>$request->PrePrice
+        ]);
+        return "Update Completed!!!!";
+    }
+
     function CreatePreOrder(Request $request){ //POST
         $preorder = new Preorder_Payment;
         $preorder->ProductID = $request->input('ProductID');
@@ -29,5 +37,11 @@ class PreOrderController extends Controller
         $preorder->PrePrice = $request->input('PrePrice');
         $preorder->save();
         return $preorder;
+    }
+
+    function DeletePreOrder($id){ //DELETE
+        $preorder = Preorder_Payment::where('ProductID', $id);
+        $preorder->delete();
+        return "Delete Completed!!!";
     }
 }

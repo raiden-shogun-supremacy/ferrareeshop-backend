@@ -20,6 +20,19 @@ class PaymentController extends Controller
         return $payment;
     }
 
+    function UpdatePayment(Request $request){ //PUT
+        Payment::where('ReceiptID', $request->ReceiptID)->update(['ProductID'=>$request->ProductID,
+        'ProductName'=>$request->ProductName,
+        'CustomerID'=>$request->CustomerID,
+        'CustomerName'=>$request->CustomerName,
+        'TotalAmt'=>$request->TotalAmt,
+        'TotalPrice'=>$request->TotalPrice,
+        'CurrentOrderPoint'=>$request->CurrentOrderPoint,
+        'ReceiptDate'=>$request->ReceiptDate,
+        ]);
+        return "Update Completed!!!!";
+    }
+
     function CreatePayment(Request $request){ //POST
         $payment = new Payment;
         $payment->ProductID = $request->input('ProductID');
@@ -31,5 +44,11 @@ class PaymentController extends Controller
         $payment->CurrentOrderPoint = $request->input('CurrentOrderPoint');
         $payment->save();
         return $payment;
+    }
+
+    function DeletePayment($id){ //DELETE
+        $payment = Payment::where('ReceiptID', $id);
+        $payment->delete();
+        return "Delete Completed!!!";
     }
 }

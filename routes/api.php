@@ -9,6 +9,7 @@ use App\Http\Controllers\DiscountCouponController;
 use App\Http\Controllers\PreOrderController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\ProductInfoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,13 @@ Route::get('employee',[EmployeeController::class,'ListEmployee']);
 
 Route::get('employee/{id}',[EmployeeController::class,'ListEmployeeByID']);
 
+Route::put('updateemployee',[EmployeeController::class,'UpdateEmployee']);
+
+Route::delete('deleteemployee/{id}',[EmployeeController::class,'DeleteEmployee']);
+
+
+
+
 Route::get('status',[OrderStatusController::class,'ListOrderStatus']);
 
 Route::get('status/{id}',[OrderStatusController::class,'ListOrderStatusByID']);
@@ -40,6 +48,10 @@ Route::get('status/{id}',[OrderStatusController::class,'ListOrderStatusByID']);
 Route::post('newstatus',[OrderStatusController::class,'CreateStatus']);
 
 Route::put('updatestatus',[OrderStatusController::class,'UpdateStatus']);
+
+Route::delete('deletestatus/{id}',[OrderStatusController::class,'DeleteStatus']);
+
+
 
 Route::get('product',[ProductStockController::class,'ListProduct']);
 
@@ -51,13 +63,19 @@ Route::post('newproduct',[ProductStockController::class,'CreateProduct']);
 
 Route::delete('deleteproduct/{id}',[ProductStockController::class,'DeleteProduct']);
 
+
+
 Route::get('coupon',[DiscountCouponController::class,'ListCoupon']);
 
 Route::get('coupon/{id}',[DiscountCouponController::class,'ListCouponByID']);
 
 Route::post('newcoupon',[DiscountCouponController::class,'CreateCoupon']);
 
+Route::put('updatecoupon',[DiscountCouponController::class,'UpdateCoupon']);
+
 Route::delete('deletecoupon/{id}',[DiscountCouponController::class,'DeleteCoupon']);
+
+
 
 Route::get('preorder',[PreOrderController::class,'ListPreOrder']);
 
@@ -65,14 +83,40 @@ Route::get('preorder/{id}',[PreOrderController::class,'ListPreOrderByID']);
 
 Route::post('newpreorder',[PreOrderController::class,'CreatePreOrder']);
 
+Route::put('updatepreorder',[PreOrderController::class,'UpdatePreOrder']);
+
+Route::delete('deletepreorder/{id}',[PreOrderController::class,'DeletePreOrder']);
+
+
+
 Route::get('customer',[CustomerController::class,'ListCustomer']);
 
 Route::get('customer/{id}',[CustomerController::class,'ListCustomerByID']);
 
+Route::put('updatecustomer',[CustomerController::class,'UpdateCustomer']);
+
 Route::post('newcustomer',[CustomerController::class,'registerCustomer']);
+
+Route::delete('deletecustomer/{id}',[CustomerController::class,'DeleteCustomer']);
+
+
 
 Route::get('payment',[PaymentController::class,'ListPayment']);
 
 Route::get('payment/{id}',[PaymentController::class,'ListPaymentByID']);
 
 Route::post('newpayment',[PaymentController::class,'CreatePayment']);
+
+Route::put('updatepayment',[PaymentController::class,'UpdatePayment']);
+
+Route::delete('deletepayment/{id}',[PaymentController::class,'DeletePayment']);
+
+
+
+Route::get('info',[ProductInfoController::class,'ListProductInfo']);
+
+Route::get('info/{id}',[ProductInfoController::class,'ListProductInfoByID']);
+
+Route::post('newinfo',[ProductInfoController::class,'CreateInfo']);
+
+Route::delete('deleteinfo/{id}',[ProductInfoController::class,'DeleteInfo']);
