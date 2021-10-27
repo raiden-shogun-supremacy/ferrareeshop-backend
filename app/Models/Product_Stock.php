@@ -16,6 +16,7 @@ class Product_Stock extends Model
         'Category' ,
         'LotNo' ,
         'UnitPrice' ,
+        'ProductIMG',
         'InStockAmt',
         'RecordDate'
     ];

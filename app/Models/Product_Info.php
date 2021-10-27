@@ -14,8 +14,7 @@ class Product_Info extends Model
         'ProductID' ,
         'ProdName' ,
         'CaregoryNo' ,
-        'ProductIMG' ,
-        'VenderNo' ,
+        'VenderNo' 
     ];
 
     public $timestamps = false;

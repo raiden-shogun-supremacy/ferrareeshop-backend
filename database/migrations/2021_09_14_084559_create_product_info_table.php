@@ -17,7 +17,6 @@ class CreateProductInfoTable extends Migration
             $table->integer('ProductID')->unsigned()->nullable()->unique();
             $table->text('ProdName');
             $table->integer('CategoryNo')->unsigned()->nullable();
-            $table->string('ProductIMG')->nullable();
             $table->integer('VendorNo')->unsigned()->nullable();
         });
     }

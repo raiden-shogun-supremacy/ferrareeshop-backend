@@ -26,7 +26,8 @@ class ProductStockController extends Controller
         'Category'=>$request->Category,
         'LotNo'=>$request->LotNo,
         'UnitPrice'=>$request->UnitPrice,
-        'InStockAmt'=>$request->InStockAmt
+        'InStockAmt'=>$request->InStockAmt,
+        'ProductIMG'=>$request->ProductIMG
         ]);
         return "Update Completed!!!!";
     }
@@ -38,7 +39,8 @@ class ProductStockController extends Controller
         $product->Category = $request->input('Category');
         $product->LotNo = $request->input('LotNo');
         $product->UnitPrice = $request->input('UnitPrice');
-        $product->InStockAmt = $request->input('InStockAmt') ;
+        $product->InStockAmt = $request->input('InStockAmt');
+        $product->ProductIMG = $request->input('ProductIMG');
         $product->save();
         return $product;
     }
