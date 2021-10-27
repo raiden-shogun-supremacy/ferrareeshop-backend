@@ -115,6 +115,8 @@ Route::delete('deletepayment/{id}',[PaymentController::class,'DeletePayment']);
 
 Route::get('info',[ProductInfoController::class,'ListProductInfo']);
 
+Route::get('image/{id}',[ProductInfoController::class,'GetImageByID']);
+
 Route::get('info/{id}',[ProductInfoController::class,'ListProductInfoByID']);
 
 Route::post('newinfo',[ProductInfoController::class,'CreateInfo']);
