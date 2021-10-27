@@ -18,7 +18,7 @@ class CreatePreorderPaymentTable extends Migration
             $table->integer('ProductID')->unsigned()->nullable();
             $table->integer('CustomerID')->unsigned()->nullable();
             $table->integer('PreOrderAmt');
-            $table->integer('PrePrice');
+            $table->float('PrePrice');
         });
     }
 

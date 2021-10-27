@@ -20,7 +20,7 @@ class CreatePaymentTable extends Migration
             $table->integer('CustomerID')->unsigned();
             $table->text('CustomerName');
             $table->integer('TotalAmt');
-            $table->integer('TotalPrice');
+            $table->float('TotalPrice');
             $table->integer('CurrentOrderPoint');
             $table->timestamp('ReceiptDate');
         });
