@@ -119,6 +119,8 @@ Route::get('image/{id}',[ProductInfoController::class,'GetImageByID']);
 
 Route::get('info/{id}',[ProductInfoController::class,'ListProductInfoByID']);
 
+Route::put('updateinfo',[ProductInfoController::class,'UpdateInfo']);
+
 Route::post('newinfo',[ProductInfoController::class,'CreateInfo']);
 
 Route::delete('deleteinfo/{id}',[ProductInfoController::class,'DeleteInfo']);

@@ -52,11 +52,22 @@ class ProductInfoController extends Controller
         $info->ProductID = $request->input('ProductID');
         $info->ProdName = $request->input('ProdName');
         $info->CategoryNo = $request->input('CategoryNo');
-        $info->ProductIMG = $request->file('ProductIMG')->store('images','public');
+        if($request->file('ProductIMG') != null){
+            $info->ProductIMG = $request->file('ProductIMG')->store('images','public');
+        }   
         $info->VendorNo = $request->input('VendorNo');
         $info->save();  
         return $info; 
 
+    }
+
+    function UpdateInfo(Request $request){ //PUT
+        Product_Info::where('ProductID', $request->ProductID)->update(['ProdName'=>$request->ProductName,
+        'CategoryNo'=>$request->CategoryNp,
+        'ProductIMG'=>$request->file('ProductIMG')->store('images','public'),
+        'VendorNo'=>$request->VendorNo
+        ]);
+        return "Update Completed!!!!";
     }
 
     function DeleteInfo($id){ //DELETE
