@@ -52,9 +52,7 @@ class ProductInfoController extends Controller
         $info->ProductID = $request->input('ProductID');
         $info->ProdName = $request->input('ProdName');
         $info->CategoryNo = $request->input('CategoryNo');
-        if($request->file('ProductIMG') != null){
-            $info->ProductIMG = $request->file('ProductIMG')->store('images','public');
-        }   
+        $info->ProductIMG = $request->input('ProductIMG');
         $info->VendorNo = $request->input('VendorNo');
         $info->save();  
         return $info; 
@@ -63,8 +61,8 @@ class ProductInfoController extends Controller
 
     function UpdateInfo(Request $request){ //PUT
         Product_Info::where('ProductID', $request->ProductID)->update(['ProdName'=>$request->ProductName,
-        'CategoryNo'=>$request->CategoryNp,
-        'ProductIMG'=>$request->file('ProductIMG')->store('images','public'),
+        'CategoryNo'=>$request->CategoryNo,
+        'ProductIMG'=>$request->ProductIMG,
         'VendorNo'=>$request->VendorNo
         ]);
         return "Update Completed!!!!";
